@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SuperMarket2
@@ -21,7 +14,7 @@ namespace SuperMarket2
         {
             FormRegister frm = new FormRegister();
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
 
@@ -29,9 +22,12 @@ namespace SuperMarket2
         {
             FormSignIn frm = new FormSignIn();
             frm.Show();
-
+            this.Hide();
         }
 
-       
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

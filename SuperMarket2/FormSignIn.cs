@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SuperMarket2
@@ -25,20 +20,40 @@ namespace SuperMarket2
 
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-            if (textBoxLogInEmail.Text =="" || textBoxLogInPassword.Text == "")
-            {
-                MessageBox.Show("Fill All Textboxes!");
-            }
+            bool a = false;
+            bool b = false;
+
             LoadUsers();
 
-            foreach(User user in users)
+            if (textBoxLogInEmail.Text == "" || textBoxLogInPassword.Text == "")
             {
-                if (user.Email == textBoxLogInEmail.Text || user.Password == textBoxLogInPassword.Text)
+                MessageBox.Show("Fill All Textboxes!");
+                b = true;
+            }
+
+
+            foreach (User user in users)
+            {
+                if (user.Email == textBoxLogInEmail.Text && user.Password == textBoxLogInPassword.Text)
                 {
                     Account account = new Account(user);
                     account.ShowDialog();
+                    a = true;
+                    Hide();
                     break;
+                    
                 }
+
+                else if (user.Email == textBoxLogInEmail.Text && user.Password != textBoxLogInPassword.Text)
+                {
+                    MessageBox.Show("Password Incorrect");
+                    a = true;
+                }
+            }
+
+            if (!a && !b)
+            {
+                MessageBox.Show("Account Not Found");
             }
         }
 

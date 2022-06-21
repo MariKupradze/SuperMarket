@@ -30,8 +30,8 @@
         {
             this.buttonRegister = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAge = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
@@ -45,8 +45,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.ageNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ageNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonRegister
@@ -61,9 +62,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ageNumericUpDown);
             this.groupBox2.Controls.Add(this.linkLabel1);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBoxAge);
             this.groupBox2.Controls.Add(this.buttonRegister);
             this.groupBox2.Controls.Add(this.textBoxPassword);
             this.groupBox2.Controls.Add(this.textBoxEmail);
@@ -85,6 +86,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Register";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(134, 281);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(40, 13);
+            this.linkLabel1.TabIndex = 17;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Sign In";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -94,13 +106,6 @@
             this.label1.Size = new System.Drawing.Size(19, 12);
             this.label1.TabIndex = 16;
             this.label1.Text = "OR";
-            // 
-            // textBoxAge
-            // 
-            this.textBoxAge.Location = new System.Drawing.Point(137, 81);
-            this.textBoxAge.Name = "textBoxAge";
-            this.textBoxAge.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAge.TabIndex = 15;
             // 
             // textBoxPassword
             // 
@@ -208,16 +213,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Name";
             // 
-            // linkLabel1
+            // ageNumericUpDown
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(134, 281);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(40, 13);
-            this.linkLabel1.TabIndex = 17;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Sign In";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.ageNumericUpDown.Location = new System.Drawing.Point(137, 80);
+            this.ageNumericUpDown.Name = "ageNumericUpDown";
+            this.ageNumericUpDown.Size = new System.Drawing.Size(100, 20);
+            this.ageNumericUpDown.TabIndex = 18;
             // 
             // FormRegister
             // 
@@ -229,6 +230,7 @@
             this.Text = "Register";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ageNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,7 +239,6 @@
 
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxPhoneNumber;
@@ -253,6 +254,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.NumericUpDown ageNumericUpDown;
     }
 }
 

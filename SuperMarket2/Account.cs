@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SuperMarket2
@@ -19,7 +12,7 @@ namespace SuperMarket2
 
         }
 
-        public Account (User user)
+        public Account(User user)
         {
             InitializeComponent();
             this.user = user;
@@ -28,18 +21,36 @@ namespace SuperMarket2
         private void button1_Click(object sender, EventArgs e)
         {
             SQLProcedures.DeleteUsers(user.Id);
-            this.Close(); 
+            this.Close();
         }
 
         private void Account_Load(object sender, EventArgs e)
         {
-            LblId.Text = Convert.ToString(user.Id);
             LblName.Text = Convert.ToString(user.Name);
             LblSurname.Text = Convert.ToString(user.Surname);
-            LblEmail.Text = Convert.ToString(user.Email);   
+            LblEmail.Text = Convert.ToString(user.Email);
             LblAge.Text = Convert.ToString(user.Age);
             LblPhoneNumber.Text = Convert.ToString(user.PhoneNumber);
             lblAddress.Text = Convert.ToString(user.Address);
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            FormUpdate f = new FormUpdate(user);
+            f.Show();
+            LblName.Text = Convert.ToString(user.Name);
+            LblSurname.Text = Convert.ToString(user.Surname);
+            LblEmail.Text = Convert.ToString(user.Email);
+            LblAge.Text = Convert.ToString(user.Age);
+            LblPhoneNumber.Text = Convert.ToString(user.PhoneNumber);
+            lblAddress.Text = Convert.ToString(user.Address);
+        }
+
+        private void btnStore_Click(object sender, EventArgs e)
+        {
+            FormProducts f = new FormProducts(user);
+            f.Show();
+            this.Hide();
         }
     }
 }

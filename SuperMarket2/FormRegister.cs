@@ -19,7 +19,7 @@ namespace SuperMarket2
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (textBoxName.Text == "" || textBoxSurname.Text == "" || textBoxAge.Text == "" ||
+            if (textBoxName.Text == "" || textBoxSurname.Text == "" || ageNumericUpDown.Text == "0" ||
                 textBoxEmail.Text == "" || textBoxPassword.Text == "" || textBoxAddress.Text == "" ||
                 textBoxPhoneNumber.Text == "")
             {
@@ -28,7 +28,10 @@ namespace SuperMarket2
 
             else
             {
-                SQLProcedures.InsertUsers(textBoxName.Text, textBoxSurname.Text, textBoxEmail.Text, textBoxPassword.Text, Convert.ToInt32(textBoxAge.Text), textBoxAddress.Text, textBoxPhoneNumber.Text);
+                SQLProcedures.InsertUsers(textBoxName.Text, textBoxSurname.Text, textBoxEmail.Text, textBoxPassword.Text, Convert.ToInt32(ageNumericUpDown.Text), textBoxAddress.Text, textBoxPhoneNumber.Text);
+                FormSignIn f = new FormSignIn();
+                f.Show();
+                this.Hide();
             }
 
         }
@@ -37,7 +40,7 @@ namespace SuperMarket2
         {
             FormSignIn f = new FormSignIn();
             f.ShowDialog();
-            this.Close();
+            Close();
         }
     }
 }
